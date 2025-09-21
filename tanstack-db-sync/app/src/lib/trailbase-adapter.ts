@@ -40,7 +40,10 @@ export function wrapRecordApi(recordApi: RecordApiImpl): RecordApiImpl & { creat
 
 // Export a wrapper for the client that patches all record APIs
 export function createClient(url: string): Client {
-  const client = initClient(url);
+  const client = initClient(url, {
+    // Don't send credentials for CORS to work properly
+    credentials: undefined
+  });
   const originalRecords = client.records.bind(client);
 
   // Override the records method to return wrapped APIs

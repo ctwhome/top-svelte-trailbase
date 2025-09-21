@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@tanstack/db": "^0.3.2",
+    "@tanstack/query-db-collection": "^0.2.20",
+    "@tanstack/svelte-db": "^0.1.21",
+    "@tanstack/trailbase-db-collection": "^0.1.21",
+    "trailbase": "^0.7.3"
+  }
+}
