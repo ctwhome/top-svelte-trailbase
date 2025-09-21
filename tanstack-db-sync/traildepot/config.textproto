@@ -1,0 +1,28 @@
+email {}
+server {
+  application_name: "TanStack-DB TrailBase Example"
+  logs_retention_sec: 604800
+  cors {
+    allowed_origins: ["http://localhost:5173", "http://localhost:5174", "http://127.0.0.1:5173"]
+    allow_credentials: true
+  }
+}
+auth {
+  auth_token_ttl_sec: 3600
+  refresh_token_ttl_sec: 2592000
+}
+jobs {}
+record_apis: [
+  {
+    name: "todos"
+    table_name: "todos"
+    acl_world: [CREATE, READ, UPDATE, DELETE]
+    enable_subscriptions: true
+  },
+  {
+    name: "config"
+    table_name: "config"
+    acl_world: [CREATE, READ, UPDATE, DELETE]
+    enable_subscriptions: true
+  }
+]
